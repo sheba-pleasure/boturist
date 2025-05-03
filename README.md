@@ -21,7 +21,7 @@ Boturist is a scalable Telegram bot platform built with Python, Django, and vari
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/boturist.git
+git clone https://github.com/sheba-pleasure/boturist.git
 cd boturist
 ```
 
@@ -196,10 +196,7 @@ docker-compose up -d
    - Review bot logs
 
 ### Support
-For issues and support:
-1. Check the issues section in the repository
-2. Contact the development team
-3. Review the documentation
+For issues and support, please open an issue on GitHub.
 
 ## Security
 
