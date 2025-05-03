@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Environment variables
+.env
+
+# ML models and data
+bot/ml/models/*.joblib
+*.pkl
+*.h5
+
+# Cache
+cache/
+.cache/
+
+# Logs
+logs/
+*.log
+
+# MongoDB
+data/db/
+
+# SSL certificates
+config/ssl/*.pem
+config/ssl/*.key
+
+# Node modules (if any)
+node_modules/
+
+# Docker
+.docker/ 

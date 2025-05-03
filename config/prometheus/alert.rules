@@ -1,0 +1,105 @@
+groups:
+- name: system
+  rules:
+  - alert: HighCPUUsage
+    expr: 100 - (avg by(instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: High CPU usage on {{ $labels.instance }}
+      description: CPU usage is above 80% for 5 minutes
+
+  - alert: HighMemoryUsage
+    expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100 > 80
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: High memory usage on {{ $labels.instance }}
+      description: Memory usage is above 80% for 5 minutes
+
+  - alert: HighDiskUsage
+    expr: (node_filesystem_size_bytes - node_filesystem_free_bytes) / node_filesystem_size_bytes * 100 > 80
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: High disk usage on {{ $labels.instance }}
+      description: Disk usage is above 80% for 5 minutes
+
+- name: application
+  rules:
+  - alert: HighErrorRate
+    expr: rate(django_http_responses_total_by_status_total{status=~"5.."}[5m]) / rate(django_http_responses_total_by_status_total[5m]) * 100 > 5
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: High error rate in web application
+      description: More than 5% of requests are resulting in 5xx errors
+
+  - alert: SlowResponses
+    expr: rate(django_http_requests_latency_seconds_by_view_method_sum[5m]) / rate(django_http_requests_latency_seconds_by_view_method_count[5m]) > 1
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: Slow response times
+      description: Average response time is above 1 second for 5 minutes
+
+  - alert: HighParserErrorRate
+    expr: rate(parser_errors_total[5m]) / rate(parser_requests_total[5m]) * 100 > 10
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: High parser error rate
+      description: Parser error rate is above 10% for 5 minutes
+
+  - alert: BotHighErrorRate
+    expr: rate(telegram_bot_errors_total[5m]) / rate(telegram_bot_messages_total[5m]) * 100 > 5
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: High bot error rate
+      description: Bot error rate is above 5% for 5 minutes
+
+- name: database
+  rules:
+  - alert: PostgresqlDown
+    expr: pg_up == 0
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: PostgreSQL instance is down
+      description: PostgreSQL instance has been down for more than 1 minute
+
+  - alert: RedisDown
+    expr: redis_up == 0
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: Redis instance is down
+      description: Redis instance has been down for more than 1 minute
+
+  - alert: PostgresqlHighConnections
+    expr: sum by (instance) (pg_stat_activity_count) > 100
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: High number of PostgreSQL connections
+      description: More than 100 active connections for 5 minutes
+
+  - alert: RedisHighMemoryUsage
+    expr: redis_memory_used_bytes / redis_memory_max_bytes * 100 > 80
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: Redis high memory usage
+      description: Redis memory usage is above 80% for 5 minutes 

@@ -1,0 +1,70 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block extrahead %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const aiToggleBtn = document.getElementById('ai-toggle-btn');
+        if (aiToggleBtn) {
+            aiToggleBtn.addEventListener('click', function() {
+                fetch('/admin/api/toggle-ai-assistant/', {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                    },
+                })
+                .then(response => response.json())
+                .then(data => {
+                    aiToggleBtn.textContent = data.enabled ? 'Отключить ИИ-помощника' : 'Включить ИИ-помощника';
+                    // Показываем уведомление
+                    const message = document.createElement('div');
+                    message.className = 'message ' + (data.enabled ? 'success' : 'warning');
+                    message.textContent = data.message;
+                    document.querySelector('.messagelist').appendChild(message);
+                    // Автоматически скрываем через 3 секунды
+                    setTimeout(() => message.remove(), 3000);
+                })
+                .catch(error => console.error('Error:', error));
+            });
+        }
+    });
+</script>
+<style>
+    .ai-toggle-btn {
+        margin: 10px;
+        padding: 8px 16px;
+        border-radius: 4px;
+        background-color: #79aec8;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    .ai-toggle-btn:hover {
+        background-color: #417690;
+    }
+    .message {
+        padding: 10px;
+        margin: 10px;
+        border-radius: 4px;
+    }
+    .message.success {
+        background-color: #dfd;
+        border: 1px solid #4caf50;
+    }
+    .message.warning {
+        background-color: #ffd;
+        border: 1px solid #ff9800;
+    }
+</style>
+{% endblock %}
+
+{% block usertools %}
+    {{ block.super }}
+    <button id="ai-toggle-btn" class="ai-toggle-btn">
+        {% if bot_settings.ai_assistant_enabled %}
+            Отключить ИИ-помощника
+        {% else %}
+            Включить ИИ-помощника
+        {% endif %}
+    </button>
+{% endblock %} 

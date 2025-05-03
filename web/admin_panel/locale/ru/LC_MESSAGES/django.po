@@ -1,0 +1,269 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-20 12:00+0000\n"
+"PO-Revision-Date: 2024-02-20 12:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+# Model translations
+msgid "Title"
+msgstr "Заголовок"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Category"
+msgstr "Категория"
+
+msgid "File"
+msgstr "Файл"
+
+msgid "Tags"
+msgstr "Теги"
+
+msgid "Created at"
+msgstr "Создано"
+
+msgid "Updated at"
+msgstr "Обновлено"
+
+msgid "Material"
+msgstr "Материал"
+
+msgid "Materials"
+msgstr "Материалы"
+
+msgid "Checklist"
+msgstr "Чек-лист"
+
+msgid "Instruction"
+msgstr "Инструкция"
+
+msgid "Document"
+msgstr "Документ"
+
+msgid "Promotional"
+msgstr "Рекламный материал"
+
+# Publication translations
+msgid "Content"
+msgstr "Содержание"
+
+msgid "Scheduled time"
+msgstr "Запланированное время"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Distribution channels"
+msgstr "Каналы распространения"
+
+msgid "Publication"
+msgstr "Публикация"
+
+msgid "Publications"
+msgstr "Публикации"
+
+msgid "Draft"
+msgstr "Черновик"
+
+msgid "Scheduled"
+msgstr "Запланировано"
+
+msgid "Published"
+msgstr "Опубликовано"
+
+msgid "Failed"
+msgstr "Ошибка"
+
+# Campaign translations
+msgid "Name"
+msgstr "Название"
+
+msgid "Start date"
+msgstr "Дата начала"
+
+msgid "End date"
+msgstr "Дата окончания"
+
+msgid "Budget"
+msgstr "Бюджет"
+
+msgid "Target audience"
+msgstr "Целевая аудитория"
+
+msgid "Performance metrics"
+msgstr "Показатели эффективности"
+
+msgid "Campaign"
+msgstr "Рекламная кампания"
+
+msgid "Campaigns"
+msgstr "Рекламные кампании"
+
+msgid "Active"
+msgstr "Активна"
+
+msgid "Paused"
+msgstr "Приостановлена"
+
+msgid "Completed"
+msgstr "Завершена"
+
+# Request translations
+msgid "Platform"
+msgstr "Платформа"
+
+msgid "Post ID"
+msgstr "ID поста"
+
+msgid "Author info"
+msgstr "Информация об авторе"
+
+msgid "Response"
+msgstr "Ответ"
+
+msgid "Request from post"
+msgstr "Заявка из поста"
+
+msgid "Requests from posts"
+msgstr "Заявки из постов"
+
+msgid "New"
+msgstr "Новая"
+
+msgid "Processing"
+msgstr "В обработке"
+
+msgid "Resolved"
+msgstr "Решена"
+
+msgid "Rejected"
+msgstr "Отклонена"
+
+# Form messages
+msgid "Add tags..."
+msgstr "Добавить теги..."
+
+msgid "Select channels"
+msgstr "Выберите каналы"
+
+msgid "Invalid JSON format"
+msgstr "Неверный формат JSON"
+
+msgid "End date must be after start date"
+msgstr "Дата окончания должна быть позже даты начала"
+
+# Success messages
+msgid "Material created successfully"
+msgstr "Материал успешно создан"
+
+msgid "Material updated successfully"
+msgstr "Материал успешно обновлен"
+
+msgid "Material deleted successfully"
+msgstr "Материал успешно удален"
+
+msgid "Publication scheduled successfully"
+msgstr "Публикация успешно запланирована"
+
+msgid "Publication updated successfully"
+msgstr "Публикация успешно обновлена"
+
+msgid "Publication deleted successfully"
+msgstr "Публикация успешно удалена"
+
+msgid "Campaign created successfully"
+msgstr "Рекламная кампания успешно создана"
+
+msgid "Campaign updated successfully"
+msgstr "Рекламная кампания успешно обновлена"
+
+msgid "Campaign deleted successfully"
+msgstr "Рекламная кампания успешно удалена"
+
+msgid "Request updated successfully"
+msgstr "Заявка успешно обновлена"
+
+# Error messages
+msgid "Unauthorized"
+msgstr "Нет доступа"
+
+msgid "Invalid request"
+msgstr "Неверный запрос"
+
+# Dashboard
+msgid "Total Materials"
+msgstr "Всего материалов"
+
+msgid "Active Campaigns"
+msgstr "Активные кампании"
+
+msgid "Pending Requests"
+msgstr "Ожидающие заявки"
+
+msgid "Scheduled Publications"
+msgstr "Запланированные публикации"
+
+msgid "Campaign Performance"
+msgstr "Эффективность кампаний"
+
+msgid "Impressions"
+msgstr "Показы"
+
+msgid "Clicks"
+msgstr "Клики"
+
+msgid "Conversions"
+msgstr "Конверсии"
+
+msgid "Request Statistics"
+msgstr "Статистика заявок"
+
+# Buttons
+msgid "Edit"
+msgstr "Редактировать"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+# Confirm messages
+msgid "Are you sure you want to delete this material?"
+msgstr "Вы уверены, что хотите удалить этот материал?"
+
+msgid "Are you sure you want to delete this publication?"
+msgstr "Вы уверены, что хотите удалить эту публикацию?"
+
+msgid "Are you sure you want to delete this campaign?"
+msgstr "Вы уверены, что хотите удалить эту рекламную кампанию?"
+
+# Social media platforms
+msgid "Telegram"
+msgstr "Telegram"
+
+msgid "VKontakte"
+msgstr "ВКонтакте"
+
+msgid "Facebook"
+msgstr "Facebook"
+
+msgid "Instagram"
+msgstr "Instagram" 
